@@ -8,3 +8,11 @@ def hello(request):
 
 def about(request):
     return HttpResponse("<h1>About us</h1> <p>We love merchex !</p>")
+
+
+def listings(request):
+    return HttpResponse("<h1>A list items</h1> <p>The list items</p>")
+
+
+def contact(request):
+    return HttpResponse("<h1>Contact us</h1> <p>Contact information.....</p>")
