@@ -6,7 +6,7 @@ from listings.models import Title
 
 def hello(request):
     bands = Band.objects.all()
-    return render(request, 'listings/hello.html', {'first_band': bands[0]})
+    return render(request, 'listings/hello.html', {'bands': bands})
 
 
 def about(request):
