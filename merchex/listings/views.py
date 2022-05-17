@@ -6,15 +6,7 @@ from listings.models import Title
 
 def hello(request):
     bands = Band.objects.all()
-    return HttpResponse(f"""
-        <h1>Hello Django !</h1>
-        <p> My favorite bands are: </p>
-        <ul>
-            <li>{bands[0].name}</li>
-            <li>{bands[1].name}</li>
-            <li>{bands[2].name}</li>
-        </ul>
-""")
+    return render(request, 'listings/hello.html', {'first_band': bands[0]})
 
 
 def about(request):
