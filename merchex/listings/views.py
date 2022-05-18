@@ -10,7 +10,7 @@ def hello(request):
 
 
 def about(request):
-    return HttpResponse("<h1>About us</h1> <p>We love merchex !</p>")
+    return render(request, 'listings/about.html')
 
 
 def listings(request):
