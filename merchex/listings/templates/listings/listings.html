@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Merchex Listing</title>
-    </head>
-    <body>
-        <h1>Welcome to my listings</h1>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h1>Welcome to my listings</h1>
         <p>My favorite titles are: </p>
         <ul>
             {% for title in titles %}
@@ -24,5 +20,4 @@
                 {% endif %}
                     favorite titles.
             </p>
-    </body>
-</html>
+{% endblock %}
