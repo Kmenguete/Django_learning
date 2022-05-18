@@ -9,7 +9,7 @@
         <p>My favorite titles are: </p>
         <ul>
             {% for title in titles %}
-            <li>{{ titles.title }}</li>
+            <li>{{ title.title|upper }}</li>
             {% endfor %}
         </ul>
         <p>I have {{ titles|length }} favorite titles.</p>
