@@ -15,15 +15,7 @@ def about(request):
 
 def listings(request):
     titles = Title.objects.all()
-    return HttpResponse(f"""
-        <h1>A titles list</h1> 
-        <p>Here are my favorite titles: </p>
-        <ul>
-            <li>{titles[0].title}</li>
-            <li>{titles[1].title}</li>
-            <li>{titles[2].title}</li>
-        </ul>
-""")
+    return render(request, 'listings/listings.html', {'titles': titles})
 
 
 def contact(request):
