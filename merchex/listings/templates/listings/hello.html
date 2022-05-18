@@ -9,8 +9,20 @@
         <p>My favorite bands are:</p>
         <ul>
             {% for band in bands %}
-            <li>{{ band.name }}</li>
+            <li>{{ band.name|upper }}</li>
             {% endfor %}
         </ul>
+        <p>I have {{ bands|length }} favorite bands.</p>
+        <p>
+            I have 
+            {% if bands|length < 5 %}
+                few
+            {% elif bands|length < 10 %}
+                some
+            {% else %}
+                a lot of
+            {% endif %}
+                favorite bands.
+        </p>
     </body>
 </html>
