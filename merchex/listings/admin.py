@@ -11,7 +11,7 @@ class BandAdmin(admin.ModelAdmin):
 
 
 class TitleAdmin(admin.ModelAdmin):
-    list_display = ('title', )  # fields we want to display in the title list of Django admin user interface
+    list_display = ('title', 'band')  # fields we want to display in the title list of Django admin user interface
 
 
 admin.site.register(Band, BandAdmin)
