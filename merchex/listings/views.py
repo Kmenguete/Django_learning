@@ -9,6 +9,10 @@ def band_list(request):
     return render(request, 'listings/band_list.html', {'bands': bands})
 
 
+def band_detail(request, band_id):
+    return render(request, 'listings/band_detail.html', {'id': band_id})
+
+
 def about(request):
     return render(request, 'listings/about.html')
 
