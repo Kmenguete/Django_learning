@@ -15,6 +15,7 @@ class Band(models.Model):
     year_formed = models.fields.IntegerField(validators=[MinValueValidator(1900), MaxValueValidator(2021)])
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    # like_news = models.fields.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name}'
