@@ -22,3 +22,4 @@ class Band(models.Model):
 
 class Title(models.Model):
     title = models.fields.CharField(max_length=100)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
