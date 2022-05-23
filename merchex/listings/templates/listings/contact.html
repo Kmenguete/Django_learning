@@ -1,7 +1,9 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
+<a href="{% url 'about' %}">About us</a>
 <a href="{% url 'listings' %}">titles</a>
+<a href="{% url 'band-list' %}">Bands</a>
 <h1>Contact us</h1>
 <p>We are here to help you.</p>
 <form action="" method="post" novalidate>

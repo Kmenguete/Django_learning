@@ -1,6 +1,9 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
+<a href="{% url 'about' %}">About us</a>
+<a href="{% url 'listings' %}">Listings</a>
+<a href="{% url 'contact' %}">Contact Form</a>
 <h1>Bands</h1>
 <ul>
     {% for band in bands %}
