@@ -23,5 +23,10 @@ def listings(request):
     return render(request, 'listings/listings.html', {'titles': titles})
 
 
+def listing_detail(request, id):
+    title = Title.objects.get(id=id)
+    return render(request, 'listings/listing_detail.html', {'title': title})
+
+
 def contact(request):
     return render(request, 'listings/contact.html')
