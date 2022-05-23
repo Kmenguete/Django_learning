@@ -3,6 +3,7 @@ from django.shortcuts import render
 from listings.models import Band
 from listings.models import Title
 from listings.forms import ContactUsForm
+from django.core.mail import send_mail
 
 
 def band_list(request):
@@ -32,6 +33,12 @@ def listing_detail(request, id):
 def contact(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
+        if form.is_valid():
+            send_mail(subject=f'Message from {form.cleaned_data["name"] or "unnamed"} via Merchex Contact Us form',
+                      message=form.cleaned_data['message'],
+                      from_email=form.cleaned_data['email'],
+                      recipient_list=['admin@merchex.xyz'],
+                      )
     else:
         form = ContactUsForm()
 
