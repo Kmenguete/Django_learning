@@ -49,3 +49,7 @@ def contact(request):
 
 def email_sent(request):
     return render(request, 'listings/email_sent.html')
+
+
+def band_create(request):
+    return render(request, 'listings/band_create.html')
