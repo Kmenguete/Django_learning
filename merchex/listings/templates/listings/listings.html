@@ -5,19 +5,9 @@
         <p>My favorite titles are: </p>
         <ul>
             {% for title in titles %}
-            <li>{{ title.title|upper }}</li>
+            <li>
+                <a href="{% url 'listings' %}">{{ title.title }}</a>
+            </li>
             {% endfor %}
         </ul>
-        <p>I have {{ titles|length }} favorite titles.</p>
-            <p>
-                I have
-                {% if titles|length < 5 %}
-                    few
-                {% elif titles|length < 10 %}
-                    some
-                {% else %}
-                    a lot of
-                {% endif %}
-                    favorite titles.
-            </p>
 {% endblock %}
