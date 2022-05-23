@@ -6,7 +6,7 @@
 <p>We are here to help you.</p>
 <form action="" method="post" novalidate>
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <input type="submit" value="Send">
 </form>
 {% endblock %}
