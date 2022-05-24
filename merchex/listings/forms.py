@@ -3,6 +3,7 @@
 from django import forms
 
 from listings.models import Band
+from listings.models import Title
 
 
 class ContactUsForm(forms.Form):
@@ -15,3 +16,9 @@ class BandForm(forms.ModelForm):
     class Meta:
         model = Band
         exclude = ('active', 'official_homepage')
+
+
+class ListingForm(forms.ModelForm):
+    class Meta:
+        model = Title
+        fields = '__all__'
