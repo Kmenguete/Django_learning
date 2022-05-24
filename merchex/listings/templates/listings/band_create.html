@@ -7,7 +7,7 @@
 <a href="{% url 'about' %}">About us</a>
 <h1>Create a new band</h1>
 
-<form action="" method="post" novalidate>
+<form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Send">
