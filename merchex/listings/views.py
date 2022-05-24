@@ -106,3 +106,13 @@ def listing_update(request, id):
     else:
         form = ListingForm(instance=title)
     return render(request, 'listings/listing_update.html', {'form': form})
+
+
+def listing_delete(request, id):
+    title = Title.objects.get(id=id)
+
+    if request.method == 'POST':
+        title.delete()
+        return redirect('listings')
+
+    return render(request, 'listings/listing_delete.html', {'title': title})
