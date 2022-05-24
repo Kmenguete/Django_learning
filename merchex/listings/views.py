@@ -84,3 +84,15 @@ def listing_create(request):
     else:
         form = ListingForm()
     return render(request, 'listings/listing_create.html', {'form': form})
+
+
+def listing_update(request, id):
+    title = Title.objects.get(id=id)
+    if request.method == 'POST':
+        form = ListingForm(request.POST, instance=title)
+        if form.is_valid():
+            form.save()
+            return redirect('listing-detail', title.id)
+    else:
+        form = ListingForm(instance=title)
+    return render(request, 'listings/listing_update.html', {'form': form})
