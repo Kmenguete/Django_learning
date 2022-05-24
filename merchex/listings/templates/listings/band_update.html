@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<a href="{% url 'about' %}">About us</a>
+<a href="{% url 'listings' %}">titles</a>
+<a href="{% url 'band-list' %}">Bands</a>
+<a href="{% url 'contact' %}">Contact us</a>
+<h1>Update a band</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="send">
+</form>
+{% endblock %}
